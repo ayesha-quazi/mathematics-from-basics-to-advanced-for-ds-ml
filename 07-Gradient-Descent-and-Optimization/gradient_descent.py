@@ -170,7 +170,8 @@ class LinearRegressionGD:
             loss = np.mean((y - y_pred) ** 2)
             self.loss_history.append(loss)
             
-            # Compute gradients
+            # Compute gradients (specific to MSE loss function)
+            # For MSE: L = (1/n)Σ(y - ŷ)², dL/dw = -(2/n)Σ(y - ŷ)x
             dw = -(2/n_samples) * X.T.dot(y - y_pred)
             db = -(2/n_samples) * np.sum(y - y_pred)
             

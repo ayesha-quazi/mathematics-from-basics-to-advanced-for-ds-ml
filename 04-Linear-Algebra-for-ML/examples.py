@@ -5,6 +5,7 @@ Demonstrates core linear algebra operations used in machine learning
 
 import numpy as np
 from typing import Tuple
+from scipy.linalg import lu
 
 
 def vector_operations_demo():
@@ -126,7 +127,6 @@ def matrix_decompositions():
     print()
     
     # LU Decomposition
-    from scipy.linalg import lu
     P, L, U = lu(A)
     print("LU Decomposition: PA = LU")
     print("L (lower triangular):")
